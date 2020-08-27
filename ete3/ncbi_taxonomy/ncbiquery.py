@@ -782,7 +782,7 @@ def upload_data(dbfile):
     DROP TABLE IF EXISTS merged;
     CREATE TABLE stats (version INT PRIMARY KEY);
     CREATE TABLE species (taxid INT PRIMARY KEY, parent INT, spname VARCHAR(50) COLLATE NOCASE, common VARCHAR(50) COLLATE NOCASE, rank VARCHAR(50), track TEXT);
-    CREATE TABLE synonym (taxid INT,spname VARCHAR(50) COLLATE NOCASE, PRIMARY KEY (spname, taxid));
+    CREATE TABLE synonym (taxid INT,spname VARCHAR(50), PRIMARY KEY (spname, taxid));
     CREATE TABLE merged (taxid_old INT, taxid_new INT);
     CREATE INDEX spname1 ON species (spname COLLATE NOCASE);
     CREATE INDEX spname2 ON synonym (spname COLLATE NOCASE);
